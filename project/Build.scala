@@ -1,5 +1,5 @@
-import sbt._
-import Keys._
+import sbt._, Keys._
+import sbtassembly.Plugin._, AssemblyKeys._
 
 object Scalanvas extends Build {
   lazy val bananaUtil: Project = Project(
@@ -21,7 +21,19 @@ object Scalanvas extends Build {
     id = "scalanvas-core",
     base = file("core"),
     dependencies = Seq(bananaUtil),
-    settings = commonSettings
+    settings = commonSettings ++ assemblySettings ++ Seq(
+      mainClass in assembly := Some(
+        "edu.umd.mith.sga.wwa.DevelopmentBuilder"
+      ),
+      mergeStrategy in assembly <<= (mergeStrategy in assembly) { (old) =>
+        {
+          case PathList("javax", "xml", _*) => MergeStrategy.first
+          case PathList("org", "apache", "commons", "logging", _*) => MergeStrategy.first
+          case PathList("org", "slf4j", _*) => MergeStrategy.first
+          case x => old(x)
+        }
+      }
+    )
   )
 
   lazy val root: Project = Project(
