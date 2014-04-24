@@ -1,8 +1,5 @@
 package edu.umd.mith.sga
 
+import edu.umd.mith.banana.jena.DefaultGraphJenaModule
 import org.w3.banana.jena._
-
-package object wwa extends JenaModule {
-  type Rdf = Jena
-}
 

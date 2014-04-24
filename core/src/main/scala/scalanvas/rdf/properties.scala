@@ -14,7 +14,7 @@ trait PropertyBinders { this: ObjectBinders =>
     this: ScalanvasPrefixes[Rdf] =>
 
     def toPG(a: A) = PointedGraph(
-      a.muri.fold[Rdf#Node](ops.bnode())(_.toUri[Rdf])
+      a.muri.fold[Rdf#Node](ops.bnode())(uri => ops.URI(uri.toString))
     )
   }
 
