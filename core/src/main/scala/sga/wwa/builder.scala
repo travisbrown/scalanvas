@@ -18,23 +18,23 @@ object DevelopmentBuilder extends Builder with ShelfmarkMapReader with App {
   trait Dev extends WwaConfiguration
     with DevelopmentConfiguration
     with BodleianImages
-    with SgaTei { this: WwaManifest => }  
-  
-  shelfmarkMap.groupBy(_._1.split("-").head).toList.sortBy(_._1).foreach {
-    case (notebookId, notebookPages) =>
-      val manifest = new PhysicalManifest with Dev {
-        val id = notebookId
-        val pages = notebookPages
-      }
+    with SgaTei { this: WwaManifest => }
 
-      try {
-        save(manifest, outputDir)
-      } catch {
-        case e: Exception =>
-          println(s"Warning: unable to create manifest for $notebookId.")
-      }
+    shelfmarkMap.groupBy(_._1.split("-").head).toList.sortBy(_._1).foreach {
+      case (notebookId, notebookPages) =>
+        val manifest = new PhysicalManifest with Dev {
+          val id = notebookId
+          val pages = notebookPages
+        }
 
-  }
+        try {
+          save(manifest, outputDir)
+        } catch {
+          case e: Exception =>
+            println(s"Warning: unable to create manifest for $notebookId.")
+        }
+
+    }
 }
 
 trait Builder extends DefaultGraphJenaModule {

@@ -20,13 +20,7 @@ object Scalanvas extends Build {
   lazy val core: Project = Project(
     id = "scalanvas-core",
     base = file("core"),
-    dependencies = Seq(bananaUtil, schemas),
-    settings = commonSettings
-  )
-
-  lazy val schemas: Project = Project(
-    id = "scalanvas-schemas",
-    base = file("schemas"),
+    dependencies = Seq(bananaUtil),
     settings = commonSettings
   )
 
@@ -34,7 +28,7 @@ object Scalanvas extends Build {
     id = "scalanvas",
     base = file("."),
     settings = commonSettings
-  ).aggregate(schemas, core)
+  ).aggregate(core)
 
   def commonSettings = Defaults.defaultSettings ++ Seq(
     organization := "edu.umd.mith",
