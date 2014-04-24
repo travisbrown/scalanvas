@@ -40,7 +40,7 @@ object Scalanvas extends Build {
     organization := "edu.umd.mith",
     version := "0.0.0-SNAPSHOT",
     resolvers += Resolver.sonatypeRepo("snapshots"),
-    scalaVersion := "2.10.3",
+    scalaVersion := "2.10.4",
     scalacOptions := Seq(
       "-feature",
       "-language:implicitConversions",
