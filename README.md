@@ -29,20 +29,21 @@ Configuration
 Copy the `./examples/config/application.conf` file to `./core/src/main/resources/`
 and edit it to reflect the paths to the TEI directories on your local system.
 
-Temporary Whitman Archive Manifest Generation Instructions
------------------------------------------------------------------
+Temporary WWA Instructions
+--------------------------
 
 Run `./sbt assembly` to compile the project, edit `shelfmarks/wwa.txt` as desired,
 and then run the application:
 
 ``` bash
-java -jar core/target/scala-2.10/scalanvas-core-assembly-0.0.0-SNAPSHOT.jar shelfmarks/wwa.txt
+java -jar core/target/scala-2.10/scalanvas-core-assembly-0.0.0-SNAPSHOT.jar \
+  shelfmarks/wwa.txt
 ```
 
 The manifests will be generated in the `output` directory.
 
-Temporary Shelley-Godwin Archive Manifest Generation Instructions
------------------------------------------------------------------
+Temporary Shelley-Godwin Archive Instructions
+---------------------------------------------
 
 If you just need to build the Shelley-Godwin Archive manifests,
 see the `builder.scala` file linked in the preceding subsection.
