@@ -65,7 +65,7 @@
     "default":       {"@type":"@id", "@id" : "oa:default"},
     "item":          {"@type":"@id", "@id" : "oa:item"},
     "first":         {"@type":"@id", "@id" : "rdf:first"},
-    "rest":          {"@type":"@id", "@id" : "rdf:rest" },
+    "rest":          {"@type":"@id", "@id" : "rdf:rest", "@container" : "@list"},
 
     "beginOffset":     {"@type":"xsd:int", "@id":"oax:begin"},
     "endOffset":       {"@type":"xsd:int", "@id":"oax:end"},

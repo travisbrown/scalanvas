@@ -2,12 +2,11 @@ package edu.umd.mith.sga.wwa
 
 import edu.umd.mith.scalanvas.model.Service
 import edu.umd.mith.sga.model.SgaManifest
-import edu.umd.mith.sga.wwa.util.ShelfmarkMapReader
 
 import java.io.File
 import java.net.URI
 
-trait WwaManifest extends SgaManifest with ShelfmarkMapReader with TeiManager {
+trait WwaManifest extends SgaManifest with TeiManager {
   this: WwaConfiguration =>
 
   def resolvableDomain = "%sshelleygodwinarchive.org".format(

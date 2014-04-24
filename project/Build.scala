@@ -9,7 +9,7 @@ object Scalanvas extends Build {
       libraryDependencies ++= Seq(
         "org.apache.jena" % "jena-arq" % "2.11.1",
         "org.scalaz" %% "scalaz-core" % "7.0.6",
-        "com.github.jsonld-java" % "jsonld-java-jena" % "0.4-SNAPSHOT"
+        "com.github.jsonld-java" % "jsonld-java-jena" % "0.2"
       )
     )
   ).dependsOn(

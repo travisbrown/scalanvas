@@ -1,6 +1,6 @@
 package edu.umd.mith.sga.frankenstein
 
-import com.github.jsonldjava.utils.JsonUtils
+import com.github.jsonldjava.utils.{ JSONUtils => JsonUtils }
 import org.w3.banana._
 import org.w3.banana.syntax._
 import edu.umd.mith.banana.jena.DefaultGraphJenaModule

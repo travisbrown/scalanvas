@@ -1,6 +1,6 @@
 package edu.umd.mith.sga.wwa
 
-import com.github.jsonldjava.utils.JsonUtils
+import com.github.jsonldjava.utils.{ JSONUtils => JsonUtils }
 //import argonaut._, Argonaut._
 import org.w3.banana._
 import org.w3.banana.syntax._
